@@ -34,7 +34,7 @@ Learn all about Gemini CLI in our [documentation](https://geminicli.com/docs/).
 This fork includes additional resources to help you get started:
 
 - **[Windows Setup Guide](./WINDOWS_SETUP.md)** - Comprehensive Windows installation and troubleshooting guide
-- **[Quick Setup Script](./scripts/quick-setup.js)** - Run `node scripts/quick-setup.js` to check your environment and get started quickly
+- **[Quick Setup Script](./scripts/quick-setup.cjs)** - Run `npm run setup` to check your environment and get started quickly
 - **[Fork Changelog](./FORK_CHANGELOG.md)** - Track changes specific to this fork
 
 ### Quick Setup Helper
@@ -42,7 +42,7 @@ This fork includes additional resources to help you get started:
 Run the quick setup script to check prerequisites and get started:
 
 ```bash
-node scripts/quick-setup.js
+npm run setup
 ```
 
 This will:

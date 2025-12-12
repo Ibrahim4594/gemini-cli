@@ -16,7 +16,7 @@ This changelog tracks modifications made to this fork of the official Gemini CLI
   - WSL2 integration tips
   - File path and permission considerations
 
-- **Quick Setup Script** (`scripts/quick-setup.js`): Automated setup utility that:
+- **Quick Setup Script** (`scripts/quick-setup.cjs`): Automated setup utility that:
   - Checks system prerequisites (Node.js version)
   - Validates the environment
   - Offers to install dependencies
