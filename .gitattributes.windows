@@ -1,0 +1,47 @@
+# Git attributes for Windows development
+# Copy this to .gitattributes for Windows-friendly line ending handling
+
+# Default behavior: convert to LF on commit, CRLF on checkout (Windows friendly)
+* text=auto
+
+# Source files: Always use LF
+*.ts text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.tsx text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.toml text eol=lf
+
+# Shell scripts: Always use LF
+*.sh text eol=lf
+
+# Windows-specific scripts: Use CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=lf
+
+# Binary files: Don't modify
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+
+# Archives
+*.zip binary
+*.tar binary
+*.gz binary
+*.tgz binary
+
+# Documentation that should preserve line endings
+LICENSE text
+CHANGELOG text
+README text
+CONTRIBUTING text
