@@ -186,12 +186,36 @@ Remove-Item -Recurse -Force $env:USERPROFILE\.gemini
 npm install -g @google/gemini-cli
 ```
 
+## Video Tutorials
+
+### Official Resources
+- [Getting Started with Gemini CLI](https://youtube.com) (Coming soon)
+- [Windows Installation Guide](https://youtube.com) (Coming soon)
+
+### Community Tutorials
+- Check out community-created tutorials on YouTube
+- Search for "Gemini CLI Windows setup"
+
+## Community Support
+
+### Getting Help
+- **GitHub Discussions**: Ask questions and share tips
+- **Stack Overflow**: Tag questions with `gemini-cli`
+- **Reddit**: r/googlegemini community
+
+### Contributing
+- Report Windows-specific bugs
+- Suggest improvements
+- Share your Windows setup tips
+- Submit pull requests
+
 ## Additional Resources
 
 - [Main README](./README.md)
-- [Troubleshooting Guide](./docs/troubleshooting.md)
+- [Windows Quick Start](./docs/get-started/windows-quickstart.md)
+- [Windows Troubleshooting](./docs/troubleshooting-windows.md)
 - [Configuration Guide](./docs/get-started/configuration.md)
-- [GitHub Issues](https://github.com/Ibrahim4594/gemini-cli/issues)
+- [GitHub Issues](https://github.com/google-gemini/gemini-cli/issues)
 
 ## Contributing
 
