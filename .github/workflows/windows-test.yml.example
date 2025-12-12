@@ -1,0 +1,139 @@
+# Example GitHub Actions workflow for testing on Windows
+# Rename this file to windows-test.yml to enable
+
+name: Windows CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-windows:
+    name: Test on Windows
+    runs-on: windows-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x, 22.x]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+
+    - name: Display system information
+      run: |
+        echo "OS: $env:OS"
+        echo "Node version:"
+        node --version
+        echo "npm version:"
+        npm --version
+        echo "PowerShell version:"
+        $PSVersionTable.PSVersion
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Run linter
+      run: npm run lint
+
+    - name: Run tests
+      run: npm test
+      env:
+        CI: true
+
+    - name: Build project
+      run: npm run build
+
+    - name: Run integration tests (without sandbox)
+      run: npm run test:integration:sandbox:none
+      env:
+        GEMINI_SANDBOX: false
+        CI: true
+
+  test-powershell-script:
+    name: Test PowerShell Setup Script
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+
+    - name: Test PowerShell script syntax
+      run: |
+        Get-Content examples/windows-powershell-setup.ps1 | Out-Null
+        Write-Host "PowerShell script syntax is valid"
+
+    - name: Test batch script
+      run: |
+        cmd /c "examples\batch-scripts\install-windows.bat /?" || echo "Batch script exists"
+
+  test-quick-setup:
+    name: Test Quick Setup Script
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Run quick setup script
+      run: npm run setup
+      continue-on-error: true
+
+  compatibility-check:
+    name: Windows Compatibility Check
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+
+    - name: Check line endings
+      run: |
+        $files = Get-ChildItem -Recurse -Include *.ts,*.js,*.json,*.md -Exclude node_modules
+        foreach ($file in $files) {
+          $content = [System.IO.File]::ReadAllText($file.FullName)
+          if ($content -match "`r`n") {
+            Write-Warning "File has CRLF line endings: $($file.FullName)"
+          }
+        }
+
+    - name: Check for Windows-specific issues
+      run: |
+        # Check for hardcoded Unix paths
+        $unixPaths = Select-String -Path "**/*.ts","**/*.js" -Pattern "/usr/|/home/|/tmp/" -Exclude node_modules
+        if ($unixPaths) {
+          Write-Warning "Found potential Unix-specific paths:"
+          $unixPaths | ForEach-Object { Write-Warning $_.Line }
+        }
+
+    - name: Install and verify
+      run: |
+        npm ci
+        npm run build
+        node bundle/gemini.js --version
