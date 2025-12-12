@@ -288,12 +288,21 @@ gemini
 
 - [**Quickstart Guide**](./docs/get-started/index.md) - Get up and running
   quickly.
+- [**Windows Quick Start**](./docs/get-started/windows-quickstart.md) - 5-minute Windows guide.
 - [**Authentication Setup**](./docs/get-started/authentication.md) - Detailed
   auth configuration.
 - [**Configuration Guide**](./docs/get-started/configuration.md) - Settings and
   customization.
 - [**Keyboard Shortcuts**](./docs/cli/keyboard-shortcuts.md) - Productivity
   tips.
+
+### Windows-Specific Resources
+
+- [**Windows Setup Guide**](./WINDOWS_SETUP.md) - Complete Windows installation guide.
+- [**Windows Troubleshooting**](./docs/troubleshooting-windows.md) - Fix Windows-specific issues.
+- [**Windows Cheat Sheet**](./docs/WINDOWS_CHEATSHEET.md) - Quick command reference.
+- [**PowerShell Setup Script**](./examples/windows-powershell-setup.ps1) - Automated setup.
+- [**VS Code Windows Guide**](./.vscode/README.windows.md) - IDE configuration for Windows.
 
 ### Core Features
 
