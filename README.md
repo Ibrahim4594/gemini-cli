@@ -1,8 +1,12 @@
 # Gemini CLI
 
-> **Note:** This is a community fork maintained by [Ibrahim4594](https://github.com/Ibrahim4594).
+> **Note:** This is a community fork maintained by [Ibrahim4594](https://github.com/Ibrahim4594) with enhanced Windows support.
+>
 > Original repository: [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli)
-> See [FORK_CHANGELOG.md](./FORK_CHANGELOG.md) for fork-specific changes.
+>
+> **Windows Users:** This fork includes comprehensive Windows documentation, automated setup scripts, and troubleshooting guides!
+>
+> See [FORK_CHANGELOG.md](./FORK_CHANGELOG.md) for all improvements.
 
 [![Gemini CLI CI](https://github.com/google-gemini/gemini-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/google-gemini/gemini-cli/actions/workflows/ci.yml)
 [![Gemini CLI E2E (Chained)](https://github.com/google-gemini/gemini-cli/actions/workflows/chained_e2e.yml/badge.svg)](https://github.com/google-gemini/gemini-cli/actions/workflows/chained_e2e.yml)
