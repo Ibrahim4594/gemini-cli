@@ -15,6 +15,7 @@ This changelog tracks modifications made to this fork of the official Gemini CLI
   - Common Windows issues and solutions
   - WSL2 integration tips
   - File path and permission considerations
+  - Community support resources
 
 - **Quick Setup Script** (`scripts/quick-setup.cjs`): Automated setup utility that:
   - Checks system prerequisites (Node.js version)
@@ -23,9 +24,26 @@ This changelog tracks modifications made to this fork of the official Gemini CLI
   - Provides quick-start commands
   - Cross-platform compatible (Windows, macOS, Linux)
 
-- **Enhanced Error Logging**: Improved error messages with more context for debugging
+- **Windows Quick Start Guide** (`docs/get-started/windows-quickstart.md`): 5-minute getting started guide for Windows users
 
-- **Fork Documentation**: This changelog to track fork-specific changes
+- **Windows Troubleshooting Guide** (`docs/troubleshooting-windows.md`): Comprehensive troubleshooting for Windows-specific issues
+
+- **Windows Command Cheat Sheet** (`docs/WINDOWS_CHEATSHEET.md`): Quick reference for PowerShell and Command Prompt commands
+
+- **PowerShell Setup Script** (`examples/windows-powershell-setup.ps1`): Interactive automated setup wizard for Windows
+
+- **Batch Script Installers** (`examples/batch-scripts/`): Command Prompt installation and uninstallation scripts
+
+- **VS Code Windows Configuration** (`.vscode/settings.windows.json`, `.vscode/README.windows.md`): IDE setup guide and settings template for Windows developers
+
+- **GitHub Actions Windows CI Example** (`.github/workflows/windows-test.yml.example`): CI/CD workflow template for Windows testing
+
+- **Pull Request Template** (`.github/PULL_REQUEST_TEMPLATE_UPSTREAM.md`): Template for submitting PRs to upstream repository
+
+### Changed
+- Updated main `README.md` with dedicated Windows resources section
+- Enhanced documentation navigation with platform-specific guides
+- Improved error messages in global entry point
 
 ### Changed
 - Updated `README.md` to indicate this is a community fork
